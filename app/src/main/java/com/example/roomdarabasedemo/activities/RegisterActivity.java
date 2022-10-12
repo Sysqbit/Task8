@@ -2,6 +2,7 @@ package com.example.roomdarabasedemo.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -46,7 +47,11 @@ public class RegisterActivity extends AppCompatActivity {
 
             DatabaseProvider databaseProvider = DatabaseProvider.getDbConnection(this.getApplicationContext());
             databaseProvider.getuserDao().insertUser(users);
-            /*Toast.makeText(this, "Data="+i, Toast.LENGTH_SHORT).show();*/
+            Toast.makeText(this, "Data inserted succesfully", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(RegisterActivity.this,MainActivity.class);
+            startActivity(intent);
+            finish();
 
 
 
